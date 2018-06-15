@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FD0AF6820D44316009041C8 /* ConnectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD0AF6720D44316009041C8 /* ConnectionHandler.swift */; };
 		C895C78D20D3EB7E00B52144 /* Pods_Pumaflor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0396FB7BC653FC849559ACC2 /* Pods_Pumaflor.framework */; };
 		C8BCEA4220D3C1B300B35470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCEA4120D3C1B300B35470 /* AppDelegate.swift */; };
 		C8BCEA4420D3C1B300B35470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCEA4320D3C1B300B35470 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 		0396FB7BC653FC849559ACC2 /* Pods_Pumaflor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pumaflor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3FB7016027986A7B56AF07 /* Pods-Pumaflor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pumaflor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor.debug.xcconfig"; sourceTree = "<group>"; };
 		77A72865DCEA94598A681DBF /* Pods-Pumaflor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pumaflor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor.release.xcconfig"; sourceTree = "<group>"; };
+		8FD0AF6720D44316009041C8 /* ConnectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHandler.swift; sourceTree = "<group>"; };
 		C834B11C20D3FA7D00967392 /* Pumaflor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pumaflor-Bridging-Header.h"; sourceTree = "<group>"; };
 		C8BCEA3E20D3C1B300B35470 /* Pumaflor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pumaflor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BCEA4120D3C1B300B35470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				C8BCEA4120D3C1B300B35470 /* AppDelegate.swift */,
 				C8DDEB4E20D3E5D40029595E /* MainWindow.swift */,
 				C8BCEA4320D3C1B300B35470 /* ViewController.swift */,
+				8FD0AF6720D44316009041C8 /* ConnectionHandler.swift */,
 				C8BCEA4520D3C1B400B35470 /* Assets.xcassets */,
 				C8BCEA4720D3C1B400B35470 /* Main.storyboard */,
 				C8BCEA4A20D3C1B400B35470 /* Info.plist */,
@@ -193,11 +196,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -211,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FD0AF6820D44316009041C8 /* ConnectionHandler.swift in Sources */,
 				C8BCEA4420D3C1B300B35470 /* ViewController.swift in Sources */,
 				C8DDEB4F20D3E5D40029595E /* MainWindow.swift in Sources */,
 				C8BCEA4220D3C1B300B35470 /* AppDelegate.swift in Sources */,

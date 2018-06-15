@@ -38,47 +38,65 @@ class ViewController: NSViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-
-    }
-
-    @discardableResult
-    override func presentError(_ error: Error) -> Bool {
-        return DispatchQueue.main.sync {
-            return super.presentError(error)
-        }
+        
+        tableView.usesAlternatingRowBackgroundColors.toggle()
     }
 
     override func viewDidAppear() {
-
-        let request = URLRequest(url: URL(string: "http://www.apple.com")!)
-
-        let queue = DispatchQueue.main
-        let task = URLSession.shared.dataTask(with: request) { (_, _, error) in
-            defer { queue.sync { self.view.window?.toolbar?.removeItem(at: 4) } }
-
-            let _items = queue.sync { self.view.window?.toolbar?.items }
-            guard error == nil, let items = _items else { self.presentError(error!); return }
-
-            for item in items where item.itemIdentifier == .websocketConnection {
-                queue.sync {
-                    item.image = NSImage(default: .statusAvailable)
-                }
+        
+        ConnectionHandler.shared.onConnectionChange = {
+            let queue = DispatchQueue.main
+            
+            let toolbar = Thread.isMainThread ? self.view.window?.toolbar : queue.sync {
+                return self.view.window?.toolbar
             }
-
-            let customer = Customer(id: UUID(), name: "Aurélien Géron")
-            let newSale = Sale(id: UUID(), customer: customer, reference: "066681")
-            self.sales.append(newSale)
+            
+            guard let item = toolbar?.items.filter ({ $0.itemIdentifier == .websocketConnection }).first else { return }
+            
+            switch $0.status {
+            case .unknown:
+                self.setImage(NSImage.DefaultName.statusNone, in: item)
+            case .connecting:
+                self.setImage(.statusPartiallyAvailable, in: item)
+            case .disconnected:
+                self.setImage(.statusUnavailable, in: item)
+            case .connected:
+                self.setImage(.statusAvailable, in: item)
+            }
+            
+            self.adjustToolbar(toolbar, for: $0.status)
         }
-
-        task.resume()
+        
+        ConnectionHandler.shared.connect()
+        
     }
-
+    
     override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
     }
+    
+}
 
+extension ViewController {
+    
+    func setImage(_ image: NSImage.DefaultName, in toolbarItem: NSToolbarItem) {
+        if Thread.isMainThread {
+            toolbarItem.image = NSImage(default: image)
+        } else {
+            DispatchQueue.main.sync {
+                toolbarItem.image = NSImage(default: image)
+            }
+        }
+    }
+    
+    func adjustToolbar(_ toolbar: NSToolbar?, for status: ConnectionHandler.Status) {
+        if status == .connected || status == .disconnected {
+            if Thread.isMainThread { toolbar?.removeItem(at: 4) } else { DispatchQueue.main.sync { toolbar?.removeItem(at: 4) }  }
+        }
+    }
+    
 }
 
 extension ViewController: NSTableViewDataSource {
@@ -86,7 +104,6 @@ extension ViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return sales.count
     }
-
 
 }
 

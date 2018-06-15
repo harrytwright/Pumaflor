@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SnapKit
 
 extension NSToolbarItem.Identifier {
 
@@ -136,6 +137,8 @@ class MainWindow: NSWindow, NSToolbarDelegate {
             button.image = iconImage
             button.bezelStyle = .texturedRounded
             button.setButtonType(.momentaryLight)
+            button.target = self
+            button.action = #selector(onConnectionStatePressed(_:))
             
             toolbarItem.view = button
         } else if itemIdentifier == .progressItem {
@@ -158,5 +161,44 @@ class MainWindow: NSWindow, NSToolbarDelegate {
     func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
         return self.toolbarDefaultItemIdentifiers(toolbar)
     }
+    
+    @objc func onConnectionStatePressed(_ sender: NSButton) {
+        let fakeVC = TestVC()
+        fakeVC.label.stringValue = ConnectionHandler.shared.status.rawValue
+        
+        let popover = NSPopover()
+        popover.contentSize = NSSize(width: 150, height: 40)
+        popover.behavior = .transient
+        popover.animates = true
+        popover.contentViewController = fakeVC
+        
+        let rect = sender.convert(sender.bounds, to: NSApp.mainWindow?.contentView)
+        popover.show(relativeTo: rect, of: (NSApp.mainWindow?.contentView)!, preferredEdge: .minY)
+    }
 
+}
+
+class TestVC: NSViewController {
+    
+    lazy var label: NSTextField  = {
+        let text = NSTextField(frame: .zero)
+        text.isBezeled = false
+        text.drawsBackground = false
+        text.isEditable = false
+        text.isSelectable = false
+        return text
+    }()
+    
+    override func loadView() {
+        self.view = NSView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+        }
+    }
 }

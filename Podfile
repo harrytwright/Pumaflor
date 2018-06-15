@@ -9,4 +9,5 @@ target 'Pumaflor' do
   pod 'Realm'
   pod 'RealmSwift'
 
+  pod 'SnapKit', '~> 4.0.0'
 end
