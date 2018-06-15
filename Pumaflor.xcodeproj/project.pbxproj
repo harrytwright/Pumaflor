@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C895C78D20D3EB7E00B52144 /* Pods_Pumaflor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0396FB7BC653FC849559ACC2 /* Pods_Pumaflor.framework */; };
 		C8BCEA4220D3C1B300B35470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCEA4120D3C1B300B35470 /* AppDelegate.swift */; };
 		C8BCEA4420D3C1B300B35470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCEA4320D3C1B300B35470 /* ViewController.swift */; };
 		C8BCEA4620D3C1B400B35470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8BCEA4520D3C1B400B35470 /* Assets.xcassets */; };
 		C8BCEA4920D3C1B400B35470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BCEA4720D3C1B400B35470 /* Main.storyboard */; };
+		C8DDEB4F20D3E5D40029595E /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DDEB4E20D3E5D40029595E /* MainWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0396FB7BC653FC849559ACC2 /* Pods_Pumaflor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pumaflor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3FB7016027986A7B56AF07 /* Pods-Pumaflor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pumaflor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor.debug.xcconfig"; sourceTree = "<group>"; };
+		77A72865DCEA94598A681DBF /* Pods-Pumaflor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pumaflor.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor.release.xcconfig"; sourceTree = "<group>"; };
 		C8BCEA3E20D3C1B300B35470 /* Pumaflor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pumaflor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BCEA4120D3C1B300B35470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8BCEA4320D3C1B300B35470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +26,7 @@
 		C8BCEA4820D3C1B400B35470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8BCEA4A20D3C1B400B35470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8BCEA4B20D3C1B400B35470 /* Pumaflor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pumaflor.entitlements; sourceTree = "<group>"; };
+		C8DDEB4E20D3E5D40029595E /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +34,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C895C78D20D3EB7E00B52144 /* Pods_Pumaflor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5EC462D43BA66DB168597C27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A3FB7016027986A7B56AF07 /* Pods-Pumaflor.debug.xcconfig */,
+				77A72865DCEA94598A681DBF /* Pods-Pumaflor.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		791EFB04CC28C72913AE0BE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0396FB7BC653FC849559ACC2 /* Pods_Pumaflor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C8BCEA3520D3C1B300B35470 = {
 			isa = PBXGroup;
 			children = (
 				C8BCEA4020D3C1B300B35470 /* Pumaflor */,
 				C8BCEA3F20D3C1B300B35470 /* Products */,
+				5EC462D43BA66DB168597C27 /* Pods */,
+				791EFB04CC28C72913AE0BE8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +81,7 @@
 			children = (
 				C8BCEA4120D3C1B300B35470 /* AppDelegate.swift */,
 				C8BCEA4320D3C1B300B35470 /* ViewController.swift */,
+				C8DDEB4E20D3E5D40029595E /* MainWindow.swift */,
 				C8BCEA4520D3C1B400B35470 /* Assets.xcassets */,
 				C8BCEA4720D3C1B400B35470 /* Main.storyboard */,
 				C8BCEA4A20D3C1B400B35470 /* Info.plist */,
@@ -70,9 +97,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8BCEA4E20D3C1B400B35470 /* Build configuration list for PBXNativeTarget "Pumaflor" */;
 			buildPhases = (
+				0ED15C8DFD0CE1A17C4D45BF /* [CP] Check Pods Manifest.lock */,
 				C8BCEA3A20D3C1B300B35470 /* Sources */,
 				C8BCEA3B20D3C1B300B35470 /* Frameworks */,
 				C8BCEA3C20D3C1B300B35470 /* Resources */,
+				20172D343B0AFBD829710DC7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,12 +157,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ED15C8DFD0CE1A17C4D45BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pumaflor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20172D343B0AFBD829710DC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pumaflor/Pods-Pumaflor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8BCEA3A20D3C1B300B35470 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C8BCEA4420D3C1B300B35470 /* ViewController.swift in Sources */,
+				C8DDEB4F20D3E5D40029595E /* MainWindow.swift in Sources */,
 				C8BCEA4220D3C1B300B35470 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,9 +338,11 @@
 		};
 		C8BCEA4F20D3C1B400B35470 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A3FB7016027986A7B56AF07 /* Pods-Pumaflor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pumaflor/Pumaflor.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
@@ -280,15 +353,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.resdev.Pumaflor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
 		C8BCEA5020D3C1B400B35470 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77A72865DCEA94598A681DBF /* Pods-Pumaflor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pumaflor/Pumaflor.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FVT8X28ANV;
@@ -299,6 +375,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = co.uk.resdev.Pumaflor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
